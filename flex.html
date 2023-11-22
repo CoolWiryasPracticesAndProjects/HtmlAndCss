@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            border: 10px solid black;
+            height: 90vh;
+            /* justify-content: flex-start; this is by default, content in x axis will start from the left */
+            /* justify-content: flex-end; this will put the content in the left */
+            /* justify-content: center; this will put the content to the center x-axis */
+            /* justify-content: space-between; this will put space between them in x-axis */
+            /* justify-content:  space-around; this will put space between them and around them as well x-axis */
+            /* justify-content: space-evenly; this will put space betwen them and around them evenly */
+            /* align-items:  flex-end; this will put the items at the bottom right of the container */
+            /* align-items: center; this will put the items at the right center of the container */
+            /* align-items: baseline; this will align the text, but in our cases they are same size*/
+            
+           /*To see thier effects, uncomment the extra divs*/
+            /* flex-wrap: nowrap; /*this is the default behavour, all will be compressed in one row/* */
+            /* flex-wrap: wrap; this will push down extra boxes if page is smaller, it is always used with align-content and gaps */
+            /* align-content: flex-start; this will remove space between rows when boxes wrap and start from the top of the container */
+            /* align-content: center; this will remove space between rows when boxes wrap and put the items at the center of the container */
+            /* align-content: flex-end; this will remove space between rows when boxes wrap and put the items at the bottom of the container */
+            /* flex-direction: row-reverse; this will reverse the order */
+            /* flex-direction: column; this will display it in column order */
+             /* column-gap: 1em; will create gap between columns */
+             /* row-gap:  1em;  will create gap between rows     */
+
+        }
+
+        /*boxes styles*/
+        .box {
+            width: 150px;
+            height: 150px;
+            font-size: 8em;
+            text-align: center;
+            border-radius:  15px;
+        }
+        #box1 {
+            background-color: hsl(0,100%,70%);
+            /* align-self: flex-start; this is default behavour will align this box at the top of the container */
+            /* align-self:  center; will put the element at the center of the container */
+            /* align-self: flex-end; this will put the element at the bottom of the container */
+
+        }
+        #box2 {
+            background-color:  hsl(52,100%,70%);
+            /* order: 1; this will place this elemenet at the end */
+            /* order:-1; this will place the element at the begining */
+        }
+        #box3 {
+            background-color:  hsl(111,100%,70%);
+
+        }
+        #box4 {
+            background-color:  hsl(201,100%,70%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <!-- <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div> -->
+    </div>
+</body>
+</html>

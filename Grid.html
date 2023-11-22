@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+           grid-gap: 20px;
+         /*1 this will create two columns and creates two rows */
+         /* grid-template-columns: 200px 400px;  
+         grid-template-rows: 200px 400px; */
+
+        /*2 this will create three columns and creates two rows */
+         /* grid-template-columns: 200px 400px 200px ;  
+         grid-template-rows: 200px 400px;  */
+
+         /*3 the previous example can be replaced by grid-template */
+         /* grid-template: 200px 400px / 200px 400px 200px ;   */
+
+         /*4 if you uncomment the fifth div, as we didnt style it here, it wont carry it, this is called implicit grid */
+         /* grid-template-columns: 200px 200px ;  
+         grid-template-rows: 200px 200px; */
+
+        /*5 to fix the implicit style issue from the example before this one, we configure a default style */
+         /* grid-template-columns: 200px 200px ;  
+         grid-template-rows: 200px 200px;
+         grid-auto-rows: 200px;
+         grid-auto-columns: 200px; */
+
+         /*6 If you want to defind gab between grids u use column-gab and row-gab */
+         /* grid-template-columns: 200px 200px ;  
+         grid-template-rows: 200px 200px;
+         column-gap: 100px;
+         row-gap: 100px; */
+         
+         /*7 uncomment the rest of the divs and fullPage sytle, this will make a 5x5 small boxes
+          it will create boxes like this
+            (1)---(2)---(3)---(4)---(5)---(6)
+             |  1  |  2  |  3  |  4  |  5  |
+            (2)-----------------------------
+             |  6  |  7  |  8  |  9  |  10 |
+            (3)-----------------------------
+             | 11  |  12 |  13 | 14  | 15  |
+            (4)-----------------------------
+             |  16 |  17 |  18 | 19  |  20 |
+            (5)-----------------------------
+             |  21 |  22 |  23 |  24 |  25 |
+            (6)-----------------------------
+         */
+         /* grid-template-columns: 100px 100px 100px 100px 100px;  
+         grid-template-rows: 100px 100px 100px 100px 100px;
+         grid-auto-columns: 100px;
+         grid-auto-rows: 100px; */
+
+         /*9  /*fr is used to fill the space, keep only 6 divs to test this
+         -first grid-template-columns will make 3 equal grids
+         -second will make the middle one bigger
+         -third one will make it shrink upto 100px and max will be 3f
+         -the second template rows is the same as the first one, just will replace  writing multiple times 100px
+         */
+         /* grid-template-rows: 100px 100px;
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-template-columns: 1fr 3fr 1fr;
+         grid-template-columns: 1fr minmax(100px, 3f) 1fr;
+         grid-template-rows: repeat(2,100px);
+          */
+
+          /*10 leave 4 divs and uncomment item-1
+          the container by default have stretch property for justify item and align item
+          justify item is verticle
+          align item is horizontal
+          */
+          /* grid-template-rows: repeat(4,100px);
+          grid-template-columns: repeat(4,1fr);
+
+          justify-items: end;  
+          align-items: baseline; */
+
+
+
+          /*11 leave 6 divs
+          uncomment header main aside and footer styles
+          this is a way of doing layout but div 2 overlapped 1, so layering items is difficult 
+          
+          */
+          /* grid-template-rows: repeat(3,100px);
+          grid-template-columns: 1fr 3fr;
+          grid-template-areas: 
+          'header header'
+          'main aside'
+          'footer footer'
+          ; */
+
+         /* leave 4 divs and streach them small
+         To make a responsive grid like bootstrap, you use auto-fit, if you use fixed pixels, it could overflow
+         */
+          /* grid-template-rows: repeat(4,100px);
+          grid-template-columns: repeat(auto-fit, minmax(100px,1fr)); */
+
+
+
+
+
+
+         /*Last if you want to make it re-sizable, use vw*/
+         /* grid-template-columns: 19vw 19vw 19vw 35vw;
+         grid-template-rows: 95vh; */
+
+        
+
+
+
+        }
+        .item {
+            background-color: yellow;
+            text-align: center;
+            border: 1px black solid;
+        }
+        #fullPage{
+            /*7 first enable all divs
+            Lets say we want to combine box 1 and 2 those two boxes
+            column wills start from 1 and end at 3
+            row will start from 1 and end at 2
+            (1)---(2)---(3)---(4)---(5)---(6)
+            |  x  |  x  |     |     |     |
+            (2)-----------------------------
+            |     |     |     |     |     |
+            (3)-----------------------------
+            |     |     |     |     |     |
+            (4)-----------------------------
+            |     |     |     |     |     |
+            (5)-----------------------------
+            |     |     |     |     |     |
+            (6)-----------------------------
+            
+            */
+            /* grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2; */
+
+            /*you can do the same thing like this*/
+            /* 
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+             */
+            /*also you can do the same in one line, first value row-start, then col-start, then row-end, then col-end
+            this one is most favourable
+            if you want it to fill the rest of the page, you do row-end -1, col-end -1
+            */
+            /* grid-area: 1 / 1 / 2 / 3; */
+
+            /*also you can do the same thing using span
+            drawback its will be pushed away if another item changes since it doesnt specify start and end*/
+            /* grid-column: span 2;
+            grid-row: span 1; */
+
+        }
+        .onTop {
+            /*8 First enable all divs
+
+            Now we will put the div 15 on top at the far right
+            For z-index, enable style inBottom, 4 will be hidden behind 15
+            */
+            /* grid-area: 1 / 4 / 3 / 6;
+            z-index: 1; */
+            
+
+        }
+        .inBottom
+        {
+            /*Elements to be overlapped in position, it needs to be specified first like below for div 4*/
+            /* grid-area: 1 / 4 / 3 / 6; */
+        }
+
+        .header {
+            /* grid-area: header; */
+        }
+        .main {
+            /* grid-area: main; */
+
+        }
+        .aside {
+            /* grid-area: aside; */
+        }
+        .footer {
+            /* grid-area: footer; */
+        }
+
+        .item-1 {
+            /* justify-self: center;
+            align-self: end; */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="fullPage" class="item header item-1">1</div>
+        <div class="item header">2</div>
+        <div class="item  aside">3</div>
+        <div class="item main  inBottom">4</div>
+        <!-- <div class="item footer">5</div>
+        <div class="item footer">6</div> -->
+        <!-- <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+        <div class="item">13</div>
+        <div class="item">14</div>
+        <div  class="item onTop">15</div> -->
+       <!-- <div class="item">16</div>
+        <div class="item">17</div>
+        <div class="item">18</div>
+        <div class="item">19</div>
+         <div class="item">20</div>
+        <div class="item">21</div>
+        <div class="item">22</div>
+        <div class="item">23</div>
+        <div class="item">24</div>
+        <div class="item">25</div>
+        <div class="item">26</div>
+        <div class="item">27</div> -->
+    </div>
+</body>
+</html>

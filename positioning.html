@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*First Block*/
+         .parent {
+
+        }
+
+        .child-one {
+            position: relative; /* relative gives u access to top,left,bottom,right but usually not used because it causes overflow*/
+            left: 10px;
+        }
+
+        .child-two {
+          
+
+        }
+
+        .child-three {
+            position: absolute; /*this one takes the object outside the document, now you can place it anywhere, also uses top,left,right,bottom*/;
+            top: 0px;
+            right: 0px;
+        }
+
+        .parent {
+        padding: 5px;
+        background-color: #00AAFF;
+        }
+
+        .child {
+        padding: 5px;
+        }
+
+        .child-one {
+        background-color: rgb(116, 255, 116);
+        }
+
+        .child-two {
+        background-color: rgb(248, 117, 117);
+        }
+
+        .child-three {
+        background-color: rgb(255, 116, 232);
+        }
+
+
+        /*Second Block*/
+        .parent2 {
+            position: relative; /*because parent is relative, everything will stay inside, only static will objects pops out of it*/
+
+        }
+
+        .child-one2 {
+            position: relative; /* relative gives u access to top,left,bottom,right but usually not used because it causes overflow*/
+            left: 10px;
+        }
+
+        .child-two2 {
+        
+
+        }
+
+        .child-three2 {
+            position: absolute; /*this one takes the object to the closes relative or html document itself, now you can place it anywhere, also uses top,left,right,bottom*/;
+            bottom: 0px;
+        }
+
+        .parent2 {
+        padding: 5px;
+        background-color: #00AAFF;
+        }
+
+        .child2 {
+        padding: 5px;
+        }
+
+        .child-one2 {
+        background-color: rgb(116, 255, 116);
+        }
+
+        .child-two2 {
+        background-color: rgb(248, 117, 117);
+        }
+
+        .child-three2 {
+        background-color: rgb(255, 116, 232);
+        }
+
+         /*Third Block*/
+         .parent3 {
+            position: absolute; /*everthing stays inside of it but now its in absolute position*/
+
+        }
+
+        .child-one3 {
+            position: relative; /* relative gives u access to top,left,bottom,right but usually not used because it causes overflow*/
+            left: 10px;
+        }
+
+        .child-two3 {
+        
+
+        }
+
+        .child-three3 {
+            position: absolute; /*this one takes the object to the closes relative or html document itself, now you can place it anywhere, also uses top,left,right,bottom*/;
+            bottom: 0px;
+        }
+
+        .parent3 {
+        padding: 5px;
+        background-color: #00AAFF;
+        }
+
+        .child3 {
+        padding: 5px;
+        }
+
+        .child-one3 {
+        background-color: rgb(116, 255, 116);
+        }
+
+        .child-two3 {
+        background-color: rgb(248, 117, 117);
+        }
+
+        .child-three3 {
+        background-color: rgb(255, 116, 232);
+        }
+
+        /*Fourth Block*/
+        .parent4 {
+            position: relative;
+
+        }
+
+        .child-one4 {
+            position: relative; /* relative gives u access to top,left,bottom,right but usually not used because it causes overflow*/
+            left: 10px;
+        }
+
+        .child-two4 {
+        
+
+        }
+
+        .child-three4 {
+            position: fixed; /*this fixes the object to the html document itself, but once you scrol down, it stays there, now you can place it anywhere, also uses top,left,right,bottom*/;
+            top: 0px;
+        }
+
+        .parent4 {
+        padding: 5px;
+        background-color: #00AAFF;
+        }
+
+        .child4 {
+        padding: 5px;
+        }
+
+        .child-one4 {
+        background-color: rgb(116, 255, 116);
+        }
+
+        .child-two4 {
+        background-color: rgb(248, 117, 117);
+        }
+
+        .child-three4 {
+        background-color: rgb(255, 116, 232);
+        }
+
+         /*Fifth Block*/
+         .parent5 {
+            position: relative;
+            height: 200vh;
+
+        }
+
+        .child-one5 {
+            position: sticky; /*it will be relative to the parent but once you move, if you scrol it moves down with it*/
+            top: 0px;
+        }
+
+        .child-two5 {
+        
+
+        }
+
+        .child-three5 {
+    
+        }
+
+        .parent5 {
+        padding: 5px;
+        background-color: #00AAFF;
+        }
+
+        .child5 {
+        padding: 5px;
+        }
+
+        .child-one5 {
+        background-color: rgb(116, 255, 116);
+        }
+
+        .child-two5 {
+        background-color: rgb(248, 117, 117);
+        }
+
+        .child-three5 {
+        background-color: rgb(255, 116, 232);
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br>
+    <div class="parent">
+        Parent
+        <div class="child-one child">One1</div>
+        <div class="child-two child">Two1</div>
+        <div class="child-three child">Three1</div>
+      </div>
+<br><br>
+      <div class="parent2">
+        Parent2
+        <div class="child-one2 child">One2</div>
+        <div class="child-two2 child">Two2</div>
+        <div class="child-three2 child">Three2</div>
+      </div>
+      <br><br>
+      <div class="parent3">
+        Parent3
+        <div class="child-one3 child">One3</div>
+        <div class="child-two3 child">Two3</div>
+        <div class="child-three3 child">Three3</div>
+      </div>
+      <br><br> <br><br> <br><br>
+      <div class="parent4">
+        Parent4
+        <div class="child-one4 child">One4</div>
+        <div class="child-two4 child">Two4</div>
+        <div class="child-three4 child">Three4</div>
+      </div>
+      <br><br>
+      <div class="parent5">
+        Parent5
+        <div class="child-one5 child">One5</div>
+        <div class="child-two5 child">Two5</div>
+        <div class="child-three5 child">Three5</div>
+      </div>
+</body>
+</html>

@@ -1,2 +1,2 @@
 # HtmlAndCss
-This repo is for html and css basics
+This repo is for html and css basics 
